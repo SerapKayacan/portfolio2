@@ -15,10 +15,10 @@ class ContactController extends Controller
 
     public function index()
     {
-        SEOTools::setTitle('İletişim');
-        SEOTools::setDescription('Güvenka Organizasyon ile iletişime geçin. Düğün, kına, nişan, sünnet, doğum günü ve kurumsal organizasyon hizmetlerimiz hakkında bilgi ve teklif almak için bizi arayın veya mesaj gönderin.');
+        SEOTools::setTitle('İletişim - Kayacan Yazılım');
+        SEOTools::setDescription('Kayacan Yazılım ile iletişime geçin. Şirketiniz için modern web sitesi geliştirme, dinamik yönetim panelleri ve özel yazılım projeleri için teklif alın.');
         SEOTools::opengraph()->addProperty('type', 'website');
-        SEOTools::metatags()->setKeywords(['güvenka organizasyon iletişim', 'organizasyon teklifi', 'kartal organizasyon', 'istanbul organizasyon firması']);
+        SEOTools::metatags()->setKeywords(['kayacan yazılım iletişim', 'web sitesi yaptır', 'yazılım teklifi', 'web yazılım ajansı']);
 
         return view('frontend.contact');
     }
@@ -38,10 +38,10 @@ class ContactController extends Controller
                     'subject'       => $request->get('subject'),
                     'messageDetail' => $request->get('message'),
                 ], function ($mail) use ($request) {
-                    $fromAddress = config('mail.from.address') ?: 'info@guvenkagroup.com';
-                    $fromName    = config('mail.from.name') ?: 'Güvenka Organizasyon';
-                    $toAddress   = env('MAIL_TO_ADDRESS') ?: 'info@guvenkagroup.com';
-                    $subject     = env('MAIL_SUBJECT') ?: 'Yeni İletişim Formu Mesajı';
+                    $fromAddress = config('mail.from.address') ?: 'noreply@smartgrup.com.tr';
+                    $fromName    = config('mail.from.name') ?: 'Kayacan Yazılım';
+                    $toAddress   = env('MAIL_TO_ADDRESS') ?: 'kayacan.serap@gmail.com';
+                    $subject     = env('MAIL_SUBJECT') ?: 'Yeni Portföy İletişim Formu Mesajı';
 
                     $mail->from($fromAddress, $fromName);
                     $mail->subject($subject);
@@ -83,9 +83,9 @@ class ContactController extends Controller
         'message'  => $request->message,
     ];
 
-    $hrEmail = env('HR_MAIL_ADDRESS') ?: 'info@guvenkagroup.com';
-    $fromAddress = config('mail.from.address') ?: 'info@guvenkagroup.com';
-    $fromName = config('mail.from.name') ?: 'Güvenka Organizasyon';
+    $hrEmail = env('HR_MAIL_ADDRESS') ?: 'kayacan.serap@gmail.com';
+    $fromAddress = config('mail.from.address') ?: 'noreply@smartgrup.com.tr';
+    $fromName = config('mail.from.name') ?: 'Kayacan Yazılım';
 
     // Extra safety check
     if (empty($hrEmail)) {

@@ -21,6 +21,7 @@ use App\Http\Controllers\Frontend\AboutUsController;
 use App\Http\Controllers\Frontend\SearchController;
 use App\Http\Controllers\Frontend\WebhookGitHub;
 use App\Http\Controllers\Frontend\ReferencesController;
+use App\Http\Controllers\Admin\TestimonialController;
 use Illuminate\Support\Facades\Route;
 
 // Frontend routes — blocked by coming soon page when COMING_SOON=true
@@ -133,6 +134,15 @@ Route::prefix('/admin')->middleware(['auth'])->group(function () {
         Route::get('/duzenle/{id}', [PartnerController::class, 'edit'])->name('edit');
         Route::put('/duzenle/{id}', [PartnerController::class, 'update'])->name('update');
         Route::delete('/sil/{id}', [PartnerController::class, 'destroy'])->name('destroy');
+    });
+
+    Route::prefix('yorum')->name('admin.testimonial.')->group(function () {
+        Route::get('/', [TestimonialController::class, 'index'])->name('index');
+        Route::get('/yeni', [TestimonialController::class, 'create'])->name('create');
+        Route::post('/yeni', [TestimonialController::class, 'store'])->name('store');
+        Route::get('/duzenle/{id}', [TestimonialController::class, 'edit'])->name('edit');
+        Route::put('/duzenle/{id}', [TestimonialController::class, 'update'])->name('update');
+        Route::delete('/sil/{id}', [TestimonialController::class, 'destroy'])->name('destroy');
     });
 
     Route::prefix('blog')->name('admin.blog.')->group(function () {

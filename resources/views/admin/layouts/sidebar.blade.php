@@ -126,6 +126,19 @@
                     </a>
                 </div>
                 <div class="menu-item">
+                    <a class="menu-link {{request()->routeIs('admin.testimonial.*') ? 'active' : ''}}" href="{{ route('admin.testimonial.index') }}">
+                        <span class="menu-icon">
+                            <span class="svg-icon svg-icon-2">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chat-quote" viewBox="0 0 16 16">
+                                  <path d="M2.678 11.894a1 1 0 0 1 .287.804 11 11 0 0 1-.258 1.493c.12-.047.24-.1.357-.156.446-.217.842-.482 1.183-.789a1 1 0 0 1 .744-.245 11 11 0 0 0 3.009.414c4.418 0 8-3.134 8-7s-3.582-7-8-7-8 3.134-8 7c0 1.76.743 3.37 1.97 4.6a1.04 1.04 0 0 1 .52.878m-1.496-.88A7.99 7.99 0 0 1 0 7c0-4.418 4.03-8 9-8s9 3.582 9 8-4.03 8-9 8a9 9 0 0 1-2.923-.483c-.378.337-.822.628-1.32.86-.776.363-1.637.587-2.535.65a.5.5 0 0 1-.527-.611c.146-.666.273-1.353.38-2.008a7 7 0 0 1-.475-.487"/>
+                                  <path d="M7.094 4h-.735c-.825 0-1.359.528-1.359 1.341 0 .548.338.97.773.97.414 0 .666-.35.666-.757 0-.083-.016-.17-.044-.254h.024c.06.012.115.024.168.024.316 0 .59-.22.65-.632l.024-.148c.024-.147.037-.294.037-.441 0-.036-.004-.07-.008-.103H7.094zm2.84 0h-.736c-.825 0-1.358.528-1.358 1.341 0 .548.337.97.773.97.414 0 .665-.35.665-.757 0-.083-.016-.17-.043-.254h.023c.06.012.116.024.169.024.315 0 .59-.22.649-.632l.024-.148c.024-.147.037-.294.037-.441 0-.036-.004-.07-.008-.103H9.934z"/>
+                                </svg>
+                            </span>
+                        </span>
+                        <span class="menu-title">Müşteri Yorumları</span>
+                    </a>
+                </div>
+                <div class="menu-item">
                     <a class="menu-link "
                        href="{{ route('tab-panel.index') }}">
                         <span class="menu-icon">
@@ -264,7 +277,7 @@
         <a href="#" style="cursor: inherit"
            class="btn btn-flex flex-center btn-custom btn-primary overflow-hidden text-nowrap px-0 h-40px w-100"
            data-bs-toggle="tooltip" data-bs-trigger="hover" data-bs-dismiss-="click" title="">
-            <span class="btn-label">Güvenka Organizasyon v1.0.0</span>
+            <span class="btn-label">Kayacan Yazılım v1.0.0</span>
             <span class="svg-icon btn-icon svg-icon-2 m-0">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path opacity="0.3"

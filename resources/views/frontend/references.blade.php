@@ -1,123 +1,123 @@
 @extends('frontend.layouts.master')
 @section('content')
 
-    <!-- Page Header Start -->
-    <div class="container-fluid py-5 mb-5" style="background: linear-gradient(135deg, #0B2154, #1a3a7a);">
-        <div class="container py-3">
-            <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
-                <div class="h6 text-white text-uppercase mb-3">// Referanslarımız //</div>
-                <h1 class="text-white mb-2">Tamamladığımız İşler</h1>
-                <p class="text-white-50 mb-0">Yıllar İçinde Gerçekleştirdiğimiz Projeler Ve Güvendiğimiz Kurumlar</p>
-            </div>
-        </div>
+  <!-- Page Header Start -->
+  <div class="container-fluid py-5 mb-5" style="background: linear-gradient(135deg, #111111 0%, #222222 100%);">
+    <div class="container py-4 text-center">
+      <div class="d-inline-flex align-items-center gap-2 bg-white bg-opacity-10 border border-white border-opacity-20 px-3 py-1 rounded-pill mb-3">
+        <span class="text-white text-uppercase fw-semibold" style="letter-spacing: 1.5px; font-size: 0.75rem;">Portföy &bull; Vaka Analizleri</span>
+      </div>
+      <h1 class="display-4 fw-bold text-white mb-3">Tamamlanan Projeler &amp; Referanslar</h1>
+      <p class="text-white-50 fs-5 mb-0 col-lg-8 mx-auto">
+        Şirketler ve markalar için tasarladığımız, geliştirdiğimiz ve yayına aldığımız canlı kurumsal web siteleri ve yönetim panelleri.
+      </p>
     </div>
-    <!-- Page Header End -->
+  </div>
+  <!-- Page Header End -->
 
-    <!-- Security References Start -->
-    @if($securityReferences->count() > 0)
-    <div class="container-xxl py-5">
-        <div class="container">
-            <div class="row g-4">
-                @foreach($securityReferences as $i => $reference)
-                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="{{ ($i % 3) * 0.15 }}s">
-                    <div class="h-100 overflow-hidden" style="border-radius:16px;box-shadow:0 4px 24px rgba(11,33,84,0.1);border:3px solid #0B2154;">
-                        <div style="height:200px;overflow:hidden;border-radius:14px 14px 0 0;position:relative;">
-                           @if($reference->hasMedia('image'))
-                                <img src="{{ $reference->getFirstMediaUrl('image','large') }}"
-                                     class="w-100 h-100" style="object-fit:cover;" alt="{{ $reference->name }}">
-                           
-                            @else
-                                <div class="w-100 h-100 d-flex align-items-center justify-content-center"
-                                     style="background:rgba(11,33,84,0.08);">
-                                    <i class="fa fa-shield-alt fa-4x" style="color:#0B2154;opacity:0.2;"></i>
-                                </div>
-                            @endif  
-                            @if($reference->location)
-                            <div class="position-absolute bottom-0 start-0 m-2 px-2 py-1 d-flex align-items-center gap-1"
-                                 style="background:rgba(0,0,0,0.55);border-radius:6px;">
-                                <i class="fa fa-map-marker-alt text-white" style="font-size:0.75rem;"></i>
-                                <small class="text-white" style="font-size:0.75rem;">{{ $reference->location }}</small>
-                            </div>
-                            @endif
-                        </div>
-                        <div class="p-4 bg-white" style="border-radius:0 0 14px 14px;">
-                            <h5 class="fw-bold mb-3" style="color:#0B2154;">{{ $reference->name }}</h5>
-                            @if($reference->description)
-                            <p class="text-muted mb-0" style="font-size:0.88rem;line-height:1.7;">{{ $reference->description }}</p>
-                            @endif
-                        </div>
-                    </div>
+  <!-- Flagship Projects Section -->
+  <div class="container py-4">
+    <div class="row g-5">
+      @forelse($references as $ref)
+        <div class="col-lg-12">
+          <div class="card rounded-4 border-0 shadow-sm overflow-hidden bg-white">
+            <div class="row g-0 align-items-stretch">
+              <div class="col-lg-5 p-5 d-flex flex-column align-items-center justify-content-center text-center position-relative"
+                   style="background: {{ $ref->card_gradient }}; min-height: 280px;">
+                <span class="badge bg-danger position-absolute top-0 start-0 m-4 px-3 py-2 rounded-pill">
+                  {{ $ref->badge ?? 'Canlı Kurumsal Web Sitesi' }}
+                </span>
+                <div class="px-4 py-2 rounded-3 bg-white shadow-sm d-inline-flex align-items-center justify-content-center mb-3" style="min-width: 160px; height: 75px;">
+                  <img src="{{ $ref->image_url }}"
+                       alt="{{ $ref->name }}" class="img-fluid" style="max-height: 55px; max-width: 200px; object-fit: contain;">
                 </div>
-                @endforeach
+                @if($ref->host)
+                  <span class="text-white-50 fs-6">{{ $ref->host }}</span>
+                @endif
+              </div>
+              <div class="col-lg-7 p-4 p-md-5 d-flex flex-column justify-content-between">
+                <div>
+                  <div class="d-flex align-items-center gap-2 mb-2">
+                    <span class="badge bg-light text-dark border">{{ $ref->category_label }}</span>
+                    @if($ref->location)
+                      <span class="badge bg-light text-dark border">{{ $ref->location }}</span>
+                    @endif
+                  </div>
+                  <h3 class="fw-bold mb-3">{{ $ref->name }}</h3>
+                  <p class="text-muted mb-4" style="line-height: 1.8; font-size: 1.02rem;">
+                    {{ $ref->description }}
+                  </p>
+                  <div class="d-flex flex-wrap gap-2 mb-4">
+                    @foreach($ref->tech_list as $tech)
+                      <span class="badge bg-dark text-white px-3 py-2">{{ $tech }}</span>
+                    @endforeach
+                  </div>
+                </div>
+                <div>
+                  <a href="{{ $ref->url ?? '#' }}" target="{{ $ref->url ? '_blank' : '_self' }}" rel="noopener"
+                     class="btn btn-dark rounded-pill px-4 py-2 fw-semibold d-inline-flex align-items-center gap-2">
+                    <span>Web Sitesine Git ({{ $ref->host ?? 'Site' }})</span>
+                    <span class="fs-5">&nearr;</span>
+                  </a>
+                </div>
+              </div>
             </div>
+          </div>
         </div>
+      @empty
+        <div class="col-12 text-center text-muted py-5">
+          Henüz referans projesi bulunmuyor.
+        </div>
+      @endforelse
     </div>
-    @endif
-    <!-- Security References End -->
+  </div>
 
-    @if($securityReferences->count() > 0 && $cleaningReferences->count() > 0)
-    <div style="height:4px;background:linear-gradient(90deg,#0B2154,#D81324);"></div>
-    @endif
-
+  <!-- Brands / Trust Logos -->
+  <div class="container py-5 my-3">
+    <div class="text-center mb-5" data-aos="fade-up">
+      <span class="text-primary text-uppercase fw-semibold" style="letter-spacing: 2px;">Çalıştığım Kurumlar &amp; Markalar</span>
+      <h2 class="display-6 fw-bold mt-2">Bize Güvenen Şirketler</h2>
+    </div>
     
-
-    @if($securityReferences->count() === 0 && $cleaningReferences->count() === 0)
-    <div class="container-xxl py-5">
-        <div class="container text-center py-5">
-            <i class="fa fa-info-circle fa-3x text-muted mb-3 d-block"></i>
-            <p class="text-muted">Henüz referans eklenmemiştir.</p>
+    <div class="row g-4 align-items-center justify-content-center">
+      <div class="col-md-4 col-sm-6 text-center">
+        <div class="p-4 bg-light rounded-4 border h-100 d-flex flex-column align-items-center justify-content-center" style="min-height: 130px;">
+          <img src="{{ asset('assets/frontend/images/projects/smartgrup_logo.webp') }}" alt="Smart Grup" style="max-height: 60px; max-width: 180px; object-fit: contain;">
+          <small class="text-muted mt-2 fw-semibold">Smart Grup Güvenlik &amp; Temizlik</small>
         </div>
-    </div>
-    @endif
-
-    <!-- Partner Logos Start -->
-    <div class="container-xxl py-5">
-        <div class="container">
-            <div class="text-center wow fadeInUp mb-5" data-wow-delay="0.1s">
-                <div class="h6 text-primary text-uppercase mb-2" style="letter-spacing:2px;">// Çalıştığımız Kurumlar //</div>
-                <h2 class="mb-0">Bize Güvenen Markalar</h2>
-            </div>
-            <div class="row g-4 align-items-center justify-content-center wow fadeInUp" data-wow-delay="0.2s">
-
-                @foreach($partners as $partner)
-                <div class="col-6 col-md-3 col-lg-2">
-                    <div class="d-flex align-items-center justify-content-center p-3"
-                         style="background:#f8f9fa;border-radius:12px;height:90px;border:1px solid #eee;transition:all 0.3s;"
-                         onmouseover="this.style.boxShadow='0 4px 20px rgba(11,33,84,0.15)';this.style.borderColor='#0B2154';"
-                         onmouseout="this.style.boxShadow='none';this.style.borderColor='#eee';">
-                        @if($partner->hasMedia('image'))
-                            <img src="{{ $partner->getFirstMediaUrl('image', 'thumb') }}"
-                                 alt="{{ $partner->name }}"
-                                 style="max-height:60px;max-width:100%;object-fit:contain;filter:grayscale(30%);"
-                                 onmouseover="this.style.filter='grayscale(0)'"
-                                 onmouseout="this.style.filter='grayscale(30%)'">
-                        @else
-                            <span class="fw-semibold text-center" style="color:#0B2154;font-size:0.8rem;line-height:1.4;">{{ $partner->name }}</span>
-                        @endif
-                    </div>
-                </div>
-                @endforeach
-            </div>
+      </div>
+      <div class="col-md-4 col-sm-6 text-center">
+        <div class="p-4 bg-light rounded-4 border h-100 d-flex flex-column align-items-center justify-content-center" style="min-height: 130px;">
+          <img src="{{ asset('assets/frontend/images/projects/sultan_logo.webp') }}" alt="Sultan Evde Sağlık" style="max-height: 55px; max-width: 200px; object-fit: contain;">
+          <small class="text-muted mt-2 fw-semibold">Özel Sultan Evde Sağlık</small>
         </div>
-    </div>
-    <!-- Partner Logos End -->
-
-    <!-- CTA Start -->
-    <div class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s" style="background:#0B2154;">
-        <div class="container">
-            <div class="row align-items-center gx-5">
-                <div class="col-lg-8 py-3">
-                    <h2 class="text-white mb-2">Siz de Referanslarımız Arasında Yer Alın</h2>
-                    <p class="mb-0" style="color:rgba(255,255,255,0.7);">Organizasyon hizmetlerimiz hakkında bilgi almak ve teklif talep etmek için bizimle iletişime geçin.</p>
-                </div>
-                <div class="col-lg-4 text-lg-end">
-                    <a href="{{ route('contact.index') }}" class="btn btn-primary py-3 px-5">
-                        Bize Ulaşın<i class="fa fa-arrow-right ms-3"></i>
-                    </a>
-                </div>
-            </div>
+      </div>
+      <div class="col-md-4 col-sm-6 text-center">
+        <div class="p-4 bg-light rounded-4 border h-100 d-flex flex-column align-items-center justify-content-center" style="min-height: 130px;">
+          <img src="{{ asset('assets/frontend/images/projects/anadolu_tadilat_logo.png') }}" alt="Anadolu Tadilat" style="max-height: 55px; max-width: 180px; object-fit: contain;">
+          <small class="text-muted mt-2 fw-semibold">Anadolu Tadilat &amp; Dekorasyon</small>
         </div>
+      </div>
     </div>
-    <!-- CTA End -->
+  </div>
+
+  <!-- CTA Box -->
+  <div class="container-fluid py-5 my-5" style="background: linear-gradient(135deg, #111111 0%, #222222 100%);">
+    <div class="container py-3">
+      <div class="row align-items-center justify-content-between g-4">
+        <div class="col-lg-8 text-white">
+          <h2 class="display-6 fw-bold text-white mb-2">Siz de Referanslarım Arasında Yer Alın</h2>
+          <p class="fs-5 text-white-50 mb-0">
+            Şirketiniz için modern kurumsal web sitesi, yönetim paneli veya özel yazılım çözümü için hemen iletişime geçin.
+          </p>
+        </div>
+        <div class="col-lg-4 text-lg-end">
+          <a href="{{ route('contact.index') }}" class="btn btn-primary btn-lg rounded-pill px-5 py-3 fw-semibold text-uppercase">
+            İletişime Geçin &rarr;
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
 
 @endsection

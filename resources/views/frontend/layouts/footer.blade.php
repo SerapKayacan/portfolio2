@@ -1,126 +1,154 @@
-<section id="footer" style="padding-top: 4px; padding-bottom: 10px;">
-    <div class="container-fluid padding-side" data-aos="fade-up">
-      <footer class="row">
-        <div class="col-md-6 col-lg-4 mb-5 mb-lg-0">
-          <img src="{{ asset('assets/frontend/images/logo.jpg') }}" alt="logo-footer" class="img-fluid" style="background-color: white; padding: 10px; border-radius: 8px;">
-          <p class="mt-3">Güvenka Organizasyon, İstanbul'da unutulmaz özel günleriniz ve kurumsal organizasyonlarınız için her zaman yanınızda.</p>
-          <ul class="social-links d-flex flex-wrap list-unstyled mt-4 mb-0">
-            <li>
-              <a href="https://www.facebook.com/profile.php?id=100064028560042&sk=about" target="_blank">
-                <svg class="social me-4" width="20" height="20">
-                  <use xlink:href="#facebook"></use>
-                </svg>
-              </a>
-            </li>
-            <li>
-              <a href="#">
-                <svg class="social me-4" width="20" height="20">
-                  <use xlink:href="#twitter"></use>
-                </svg>
-              </a>
-            </li>
-            <li>
-              <a href="#">
-                <svg class="social me-4" width="20" height="20">
-                  <use xlink:href="#linkedin"></use>
-                </svg>
-              </a>
-            </li>
-            <li>
-              <a href="https://www.instagram.com/guvenkagroup" target="_blank">
-                <svg class="social me-4" width="20" height="20">
-                  <use xlink:href="#instagram"></use>
-                </svg>
-              </a>
-            </li>
-            <li>
-              <a href="#">
-                <svg class="social me-4" width="20" height="20">
-                  <use xlink:href="#youtube"></use>
-                </svg>
-              </a>
-            </li>
-          </ul>
-        </div>
+<footer id="footer" class="bg-black text-white py-5">
+    <div class="container-sm">
+      <div class="row g-md-5 my-4">
         
-        <div class="col-md-6 col-lg-3 mb-5 mb-lg-0">
-          <h4 class="display-6 fw-normal">İletişim</h4>
-          <ul class="nav flex-column">
-            <li class="location text-capitalize d-flex align-items-center">
-              <svg class="color me-1" width="20" height="20">
-                <use xlink:href="#location"></use>
-              </svg>Güvenka Organizasyon
-            </li>
-            <li class="text-capitalize ms-4">
-              İstanbul, Türkiye
-            </li>
-            <li class="phone text-capitalize d-flex align-items-center mt-2">
-              <svg class="color me-1" width="20" height="20">
-                <use xlink:href="#phone"></use>
-              </svg>0535 300 80 52
-            </li>
-            <li class="email d-flex align-items-center mt-2" style="text-transform: none;">
-              <svg class="color me-1" width="20" height="20">
-                <use xlink:href="#email"></use>
-              </svg>info@guvenkagroup.com
-            </li>
-          </ul>
+        <!-- Brand & About -->
+        <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
+          <div class="info-box">
+            <div class="d-flex align-items-center gap-3 mb-3">
+              <a href="{{ route('home') }}" class="d-inline-block">
+                <img src="{{ asset('assets/frontend/images/logo-4.png') }}" alt="Kayacan Yazılım" style="height: 48px; width: auto; object-fit: contain;">
+              </a>
+              <div>
+                <h5 class="text-white mb-0 fw-bold">Kayacan Yazılım</h5>
+                <small class="text-white-50">Web &amp; Kurumsal Yazılım Çözümleri</small>
+              </div>
+            </div>
+            <p class="text-white-50 py-2 mb-3" style="line-height: 1.7; font-size: 0.95rem;">
+              Şirketlerin dijital varlığını güçlendiren modern kurumsal web siteleri, dinamik yönetim panelleri ve SEO odaklı yüksek performanslı web çözümleri geliştiriyoruz.
+            </p>
+            <div class="social-links d-flex align-items-center gap-2">
+              <a href="https://www.linkedin.com/in/serap-kayacan-3ba481207" target="_blank" rel="noopener"
+                 class="btn btn-outline-light rounded-circle p-2 d-flex align-items-center justify-content-center"
+                 style="width: 38px; height: 38px;" title="LinkedIn">
+                <svg width="18" height="18"><use xlink:href="#linkedin"></use></svg>
+              </a>
+              <a href="https://github.com/SerapKayacan" target="_blank" rel="noopener"
+                 class="btn btn-outline-light rounded-circle p-2 d-flex align-items-center justify-content-center"
+                 style="width: 38px; height: 38px;" title="GitHub">
+                <svg width="18" height="18"><use xlink:href="#github"></use></svg>
+              </a>
+              <a href="https://wa.me/905415600727" target="_blank" rel="noopener"
+                 class="btn btn-outline-success rounded-circle p-2 d-flex align-items-center justify-content-center"
+                 style="width: 38px; height: 38px;" title="WhatsApp">
+                <svg width="18" height="18"><use xlink:href="#whatsapp"></use></svg>
+              </a>
+              <a href="mailto:kayacan.serap@gmail.com"
+                 class="btn btn-outline-light rounded-circle p-2 d-flex align-items-center justify-content-center"
+                 style="width: 38px; height: 38px;" title="Email">
+                <svg width="18" height="18"><use xlink:href="#envelope"></use></svg>
+              </a>
+            </div>
+          </div>
         </div>
-        <div class="col-md-6 col-lg-2 mb-5 mb-lg-0">
-          <h4 class="display-6 fw-normal">Hızlı Linkler</h4>
-          <ul class="nav flex-column">
-            <li class="nav-item"><a href="{{ route('home') }}" class="p-0"> Ana Sayfa </a></li>
-            <li class="nav-item"><a href="{{ route('about-us.index') }}" class="p-0"> Hakkımızda </a></li>
-            <li class="nav-item"><a href="{{ route('blog.index') }}" class="p-0"> Blog </a></li>
-            <li class="nav-item"><a href="{{ route('contact.index') }}" class="p-0"> İletişim </a></li>
-          </ul>
-        </div>
-        <div class="col-md-6 col-lg-3 mb-5 mb-lg-0">
-          <h4 class="display-6 fw-normal">Hizmetlerimiz</h4>
-          <ul class="nav flex-column">
-            @php
-                $footerServices = \App\Models\Service::where('is_active', true)->orderBy('sort_order', 'ASC')->take(6)->get();
-            @endphp
-            @foreach($footerServices as $footerService)
-            <li class="nav-item"><a href="{{ route('services-detail.show', $footerService->slug) }}" class="p-0"> {{ $footerService->title }} </a></li>
-            @endforeach
-          </ul>
-        </div>
-        
-        <div class="col-12 text-center mt-4 pt-4 border-top">
-          <p class="m-0">© Tüm Hakları Saklıdır {{ date('Y') }} Güvenka Organizasyon.</p>
-        </div>
-      </footer>
-  </section>
 
-<!-- Sticky Side Buttons -->
-<div class="sticky-side-buttons">
-    <a href="tel:+905353008052" class="sticky-btn sticky-btn-call" aria-label="Bizi Arayın">
-        <iconify-icon icon="mdi:phone" width="24" height="24"></iconify-icon>
-        <span class="sticky-btn-label">0535 300 80 52</span>
-    </a>
-    <a href="https://wa.me/905353008052" target="_blank" rel="noopener noreferrer" class="sticky-btn sticky-btn-whatsapp" aria-label="WhatsApp">
-        <iconify-icon icon="mdi:whatsapp" width="24" height="24"></iconify-icon>
-        <span class="sticky-btn-label">WhatsApp</span>
-    </a>
-    <a href="https://www.facebook.com/profile.php?id=100064028560042&sk=about" target="_blank" rel="noopener noreferrer" class="sticky-btn sticky-btn-facebook" aria-label="Facebook">
-        <iconify-icon icon="mdi:facebook" width="24" height="24"></iconify-icon>
-    </a>
-    <a href="https://www.instagram.com/guvenkagroup" target="_blank" rel="noopener noreferrer" class="sticky-btn sticky-btn-instagram" aria-label="Instagram">
-        <iconify-icon icon="mdi:instagram" width="24" height="24"></iconify-icon>
-    </a>
-    <a href="https://www.linkedin.com/company/guvenkagroup" target="_blank" rel="noopener noreferrer" class="sticky-btn sticky-btn-linkedin" aria-label="LinkedIn">
-        <iconify-icon icon="mdi:linkedin" width="24" height="24"></iconify-icon>
-    </a>
-</div>
-<!-- End Sticky Side Buttons -->
+        <!-- Quick Links -->
+        <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+          <h6 class="text-uppercase text-primary fw-bold mb-3 ls-4" style="font-size: 0.85rem;">Hızlı Bağlantılar</h6>
+          <ul class="list-unstyled">
+            <li class="mb-2">
+              <a class="text-decoration-none text-white-50 d-inline-block hover-white" href="{{ route('home') }}">Ana Sayfa</a>
+            </li>
+            <li class="mb-2">
+              <a class="text-decoration-none text-white-50 d-inline-block hover-white" href="{{ route('about-us.index') }}">Hakkımızda</a>
+            </li>
+            <li class="mb-2">
+              <a class="text-decoration-none text-white-50 d-inline-block hover-white" href="{{ route('references.index') }}">Tamamlanan Projeler</a>
+            </li>
+            <li class="mb-2">
+              <a class="text-decoration-none text-white-50 d-inline-block hover-white" href="{{ route('services-category.index') }}">Web Geliştirme Hizmetleri</a>
+            </li>
+            <li class="mb-2">
+              <a class="text-decoration-none text-white-50 d-inline-block hover-white" href="{{ route('contact.index') }}">İletişim &amp; Teklif</a>
+            </li>
+          </ul>
+        </div>
 
- <script src="{{ asset('assets/frontend/js/jquery-1.11.0.min.js') }}"></script>
-  <script type="text/javascript" src="{{ asset('assets/frontend/js/bootstrap.bundle.min.js') }}"></script>
-  <script type="text/javascript" src="{{ asset('assets/frontend/js/plugins.js') }}"></script>
-  <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <script type="text/javascript" src="{{ asset('assets/frontend/js/script.js') }}"></script>
-  <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+        <!-- Expertise & Solutions -->
+        <div class="col-lg-2 col-md-6 mb-4 mb-md-0">
+          <h6 class="text-uppercase text-primary fw-bold mb-3 ls-4" style="font-size: 0.85rem;">Çözümlerimiz</h6>
+          <ul class="list-unstyled">
+            <li class="mb-2">
+              <a class="text-decoration-none text-white-50 d-inline-block" href="{{ route('services-category.index') }}">
+                Kurumsal Web Siteleri
+              </a>
+            </li>
+            <li class="mb-2">
+              <a class="text-decoration-none text-white-50 d-inline-block" href="{{ route('services-category.index') }}">
+                Dinamik Yönetim Panelleri
+              </a>
+            </li>
+            <li class="mb-2">
+              <a class="text-decoration-none text-white-50 d-inline-block" href="{{ route('services-category.index') }}">
+                Teknik SEO &amp; Hız
+              </a>
+            </li>
+            <li class="mb-2">
+              <a class="text-decoration-none text-primary fw-semibold d-inline-block" href="{{ route('references.index') }}">
+                Tüm Referanslar &rarr;
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Contact Box -->
+        <div class="col-lg-3 col-md-6">
+          <h6 class="text-uppercase text-primary fw-bold mb-3 ls-4" style="font-size: 0.85rem;">Doğrudan İletişim</h6>
+          <p class="text-white-50 mb-3" style="font-size: 0.95rem;">
+            Şirketiniz için yeni bir web sitesi veya özel yazılım çözümü için hemen iletişime geçebilirsiniz.
+          </p>
+          <div class="mb-2">
+            <small class="text-white-50 d-block">E-posta:</small>
+            <a href="mailto:kayacan.serap@gmail.com" class="text-white text-decoration-none fw-semibold">
+              kayacan.serap@gmail.com
+            </a>
+          </div>
+          <div class="mb-3">
+            <small class="text-white-50 d-block">Telefon / WhatsApp:</small>
+            <a href="https://wa.me/905415600727" target="_blank" class="text-white text-decoration-none fw-semibold">
+              +90 541 560 07 27
+            </a>
+          </div>
+          <div>
+            <small class="text-white-50 d-block">Konum:</small>
+            <span class="text-white">İstanbul, Türkiye</span>
+          </div>
+        </div>
+
+      </div>
+      
+      <div class="row pt-4 mt-4 border-top border-secondary">
+        <div class="col-md-6 text-center text-md-start mb-2 mb-md-0">
+          <p class="text-white-50 mb-0" style="font-size: 0.88rem;">
+            &copy; {{ date('Y') }} <strong class="text-white">Kayacan Yazılım</strong>. Tüm Hakları Saklıdır. Kurumsal Web &amp; Yazılım Çözümleri.
+          </p>
+        </div>
+        <div class="col-md-6 text-center text-md-end">
+          <p class="text-white-50 mb-0" style="font-size: 0.88rem;">
+            Kayacan Yazılım | Profesyonel Web Tasarımı &amp; Kurumsal Yazılım Çözümleri
+          </p>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <!-- Scripts -->
+  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+  <script src="{{ asset('assets/frontend/js/jquery-1.11.0.min.js') }}"></script> <!-- jquery file-->
+
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+    integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+    crossorigin="anonymous"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+    integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+    crossorigin="anonymous"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script> <!--cdn link-->
+  <script src="{{ asset('assets/frontend/js/plugins.js') }}"></script>
+  <script type="text/javascript" src="{{ asset('assets/frontend/js/lightbox.min.js') }}"></script>
+
+  <script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
+  <script src="{{ asset('assets/frontend/js/script.js') }}"></script>
+<script type="module" src="https://static.cloudflareinsights.com/beacon.min.js/vce701823e78c4301a35b7e07294d87301792088814092" integrity="sha512-UKNk8GbxkABxKcXYuLkO16EleLGUkcvJWtpSNmExE0Too3ZaFAxTscNWEc1OdAv5/BikHawapSCaiD2XCmp+Bw==" data-cf-beacon='{"version":"2024.11.0","token":"317c7824a07c40cb9ae929f34b17c111","r":1,"spa":2}' crossorigin="anonymous"></script>
 </body>
 </html>

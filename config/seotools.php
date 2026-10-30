@@ -3,15 +3,13 @@
 return [
     'meta' => [
         'defaults' => [
-            'title'        => 'Güvenka Organizasyon',
+            'title'        => 'Kayacan Yazılım | Profesyonel Web & Yazılım Çözümleri',
             'titleBefore'  => false,
-            'description'  => 'Güvenka Organizasyon olarak İstanbul\'da düğün, kına, nişan, sünnet, doğum günü, baby shower ve kurumsal etkinlikleriniz için profesyonel organizasyon çözümleri sunuyoruz.',
+            'description'  => 'Kayacan Yazılım - Şirketler için modern kurumsal web siteleri, dinamik yönetim panelleri ve yüksek performanslı özel yazılım çözümleri.',
             'separator'    => ' - ',
             'keywords'     => [
-                'güvenka organizasyon', 'organizasyon firması', 'düğün organizasyonu', 'kına organizasyonu',
-                'nişan organizasyonu', 'sünnet organizasyonu', 'doğum günü organizasyonu', 'baby shower organizasyonu',
-                'açılış organizasyonu', 'istanbul organizasyon', 'kurumsal etkinlik', 'davet organizasyonu',
-                'etkinlik yönetimi', 'istanbul davet', 'özel gün organizasyonu',
+                'kayacan yazılım', 'kurumsal web sitesi', 'web yazılım ajansı', 'yönetim paneli',
+                'istanbul web tasarım', 'smart grup', 'sultan evde sağlık', 'anadolu tadilat'
             ],
             'canonical'    => 'full',
             'robots'       => 'all',
@@ -28,24 +26,24 @@ return [
     ],
     'opengraph' => [
         'defaults' => [
-            'title'       => 'Güvenka Organizasyon',
-            'description' => 'Güvenka Organizasyon olarak İstanbul\'da düğün, kına, nişan, sünnet ve kurumsal etkinlikleriniz için profesyonel organizasyon çözümleri sunuyoruz.',
+            'title'       => 'Kayacan Yazılım | Profesyonel Web & Yazılım Çözümleri',
+            'description' => 'Şirketler için modern kurumsal web siteleri, dinamik yönetim panelleri ve yüksek performanslı web çözümleri geliştiriyoruz.',
             'url'         => null,
             'type'        => false,
-            'site_name'   => 'Güvenka Organizasyon',
+            'site_name'   => 'Kayacan Yazılım',
             'images'      => [],
         ],
     ],
     'twitter' => [
         'defaults' => [
             'card' => 'summary',
-            'site' => '@guvenkagroup',
+            'site' => '@KayacanYazilim',
         ],
     ],
     'json-ld' => [
         'defaults' => [
-            'title'       => 'Güvenka Organizasyon',
-            'description' => 'Güvenka Organizasyon olarak İstanbul\'da düğün, kına, nişan, sünnet ve kurumsal etkinlikleriniz için profesyonel organizasyon çözümleri sunuyoruz.',
+            'title'       => 'Kayacan Yazılım | Profesyonel Web & Yazılım Çözümleri',
+            'description' => 'Şirketler için modern kurumsal web siteleri, dinamik yönetim panelleri ve yüksek performanslı web çözümleri geliştiriyoruz.',
             'url'         => null,
             'type'        => 'WebPage',
             'images'      => [],

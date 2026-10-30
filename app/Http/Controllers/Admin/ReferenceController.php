@@ -23,18 +23,25 @@ class ReferenceController extends Controller
 
     public function store(Request $request)
     {
+        $categoryKeys = implode(',', array_keys(Reference::categories()));
         $request->validate([
             'name'     => 'required|string|max:255',
-            'category' => 'required|in:security,cleaning',
+            'category' => 'required|in:' . $categoryKeys,
+            'url'      => 'nullable|string|max:255',
+            'badge'    => 'nullable|string|max:100',
         ]);
 
         $reference = Reference::create([
-            'name'        => $request->name,
-            'location'    => $request->location,
-            'category'    => $request->category,
-            'description' => $request->description,
-            'sort_order'  => $request->sort_order ?? 0,
-            'is_active'   => $request->boolean('is_active', true),
+            'name'         => $request->name,
+            'location'     => $request->location,
+            'category'     => $request->category,
+            'description'  => $request->description,
+            'url'          => $request->url,
+            'badge'        => $request->badge,
+            'technologies' => $request->technologies,
+            'gradient'     => $request->gradient,
+            'sort_order'   => $request->sort_order ?? 0,
+            'is_active'    => $request->boolean('is_active', true),
         ]);
 
         if ($request->hasFile('image')) {
@@ -56,19 +63,26 @@ class ReferenceController extends Controller
 
     public function update(Request $request, string $id)
     {
+        $categoryKeys = implode(',', array_keys(Reference::categories()));
         $request->validate([
             'name'     => 'required|string|max:255',
-            'category' => 'required|in:security,cleaning',
+            'category' => 'required|in:' . $categoryKeys,
+            'url'      => 'nullable|string|max:255',
+            'badge'    => 'nullable|string|max:100',
         ]);
 
         $reference = Reference::findOrFail($id);
         $reference->update([
-            'name'        => $request->name,
-            'location'    => $request->location,
-            'category'    => $request->category,
-            'description' => $request->description,
-            'sort_order'  => $request->sort_order ?? 0,
-            'is_active'   => $request->boolean('is_active', true),
+            'name'         => $request->name,
+            'location'     => $request->location,
+            'category'     => $request->category,
+            'description'  => $request->description,
+            'url'          => $request->url,
+            'badge'        => $request->badge,
+            'technologies' => $request->technologies,
+            'gradient'     => $request->gradient,
+            'sort_order'   => $request->sort_order ?? 0,
+            'is_active'    => $request->boolean('is_active', true),
         ]);
 
         if ($request->hasFile('image')) {

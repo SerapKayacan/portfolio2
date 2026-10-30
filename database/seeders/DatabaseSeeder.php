@@ -24,6 +24,8 @@ class DatabaseSeeder extends Seeder
             ServiceSeeder::class,
             UserSeeder::class,
             ReferenceSeeder::class,
+            PartnerSeeder::class,
+            BlogSeeder::class,
             TabPanelSeeder::class,
         ]);
 

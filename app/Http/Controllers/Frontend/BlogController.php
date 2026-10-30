@@ -15,10 +15,10 @@ class BlogController extends Controller
      */
     public function index()
     {
-        SEOTools::setTitle('Blog & Etkinlikler');
-        SEOTools::setDescription('Güvenka Organizasyon blog yazıları. Düğün, kına, nişan, evlilik teklifi ve organizasyon dünyasından en son trendler, konsept önerileri ve ilham verici fikirler.');
+        SEOTools::setTitle('Yazılar & Makaleler - Kayacan Yazılım');
+        SEOTools::setDescription('Kayacan Yazılım - Web geliştirme, modern arayüz mimarileri, SEO ve teknoloji üzerine teknik yazılar ve ipuçları.');
         SEOTools::opengraph()->addProperty('type', 'website');
-        SEOTools::metatags()->setKeywords(['güvenka organizasyon blog', 'organizasyon trendleri', 'düğün fikirleri', 'kına konseptleri']);
+        SEOTools::metatags()->setKeywords(['kayacan yazılım blog', 'web geliştirme', 'yazılım mühendisliği', 'seo ipuçları']);
 
         // 9 items per page fits most grid layouts nicely
         $blogs = Blog::where('is_active', true)->latest('published_at')->paginate(9);
@@ -32,7 +32,7 @@ class BlogController extends Controller
     {
         $blog = Blog::where('slug', $slug)->where('is_active', true)->firstOrFail();
 
-        SEOTools::setTitle($blog->title);
+        SEOTools::setTitle($blog->title . ' - Kayacan Yazılım');
         SEOTools::setDescription(Str::limit(strip_tags($blog->content), 160));
         SEOTools::opengraph()->addProperty('type', 'article');
         if ($blog->image) {

@@ -24,8 +24,8 @@ class SearchController extends Controller
     {
         $rawQuery = trim((string) $request->input('query', ''));
 
-        SEOTools::setTitle($rawQuery !== '' ? 'Arama: ' . $rawQuery . ' - Güvenka Organizasyon' : 'Arama - Güvenka Organizasyon');
-        SEOTools::setDescription('Güvenka Organizasyon arama sonuçları' . ($rawQuery !== '' ? ': ' . $rawQuery : '.'));
+        SEOTools::setTitle($rawQuery !== '' ? 'Arama: ' . $rawQuery . ' - Kayacan Yazılım' : 'Arama - Kayacan Yazılım');
+        SEOTools::setDescription('Kayacan Yazılım arama sonuçları' . ($rawQuery !== '' ? ': ' . $rawQuery : '.'));
         SEOTools::opengraph()->addProperty('type', 'website');
 
         if ($rawQuery === '') {

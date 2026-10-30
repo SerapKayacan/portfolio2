@@ -134,7 +134,7 @@
                                 <h3 class="display-5 fw-normal m-0">
                                     Hizmetlerimiz <span class="text-primary">({{ $services->count() }})</span>
                                 </h3>
-                                <p class="text-muted m-0 mt-1 small">Aradığınız kriterlere uygun Güvenka organizasyon hizmetleri</p>
+                                <p class="text-muted m-0 mt-1 small">Aradığınız kriterlere uygun Kayacan Yazılım çözümleri</p>
                             </div>
                             <a href="{{ route('services-category.index') }}" class="btn btn-sm btn-arrow btn-section-link d-inline-flex">
                                 <span>Tüm Faaliyet Alanlarımız <svg width="14" height="14"><use xlink:href="#arrow-right"></use></svg></span>
@@ -337,11 +337,11 @@
                     
                     <div class="col-lg-5 text-center text-md-end">
                         <div class="d-flex flex-column flex-sm-row justify-content-md-end gap-3">
-                            <a href="tel:+905353008052" class="btn btn-light rounded-pill py-3 px-4 d-inline-flex align-items-center justify-content-center gap-2 fw-semibold">
+                            <a href="tel:+905415600727" class="btn btn-light rounded-pill py-3 px-4 d-inline-flex align-items-center justify-content-center gap-2 fw-semibold">
                                 <iconify-icon icon="mdi:phone" width="20" height="20" style="color: var(--primary-color);"></iconify-icon>
-                                <span>0535 300 80 52</span>
+                                <span>+90 541 560 07 27</span>
                             </a>
-                            <a href="https://wa.me/905353008052?text={{ urlencode('Merhaba, Güvenka Organizasyon hizmetleri hakkında bilgi almak istiyorum.') }}" 
+                            <a href="https://wa.me/905415600727?text={{ urlencode('Merhaba, Kayacan Yazılım çözümleri hakkında bilgi almak istiyorum.') }}" 
                                target="_blank" 
                                rel="noopener noreferrer"
                                class="btn rounded-pill py-3 px-4 d-inline-flex align-items-center justify-content-center gap-2 fw-semibold"

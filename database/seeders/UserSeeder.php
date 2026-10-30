@@ -13,17 +13,21 @@ class UserSeeder extends Seeder
      */
     public function run(): void
     {
-        User::create([
-            'name' => 'Osman Ustalar',
-            'email' => 'osmanustalar@gmail.com',
-            'password' => bcrypt('test'),
-            'is_active' => true
-        ]);
-        User::create([
-            'name' => 'Serap Kayacan',
-            'email' => 'kayacan@gmail.com',
-            'password' => bcrypt('1234'),
-            'is_active' => true
-        ]);
+        User::updateOrCreate(
+            ['email' => 'osmanustalar@gmail.com'],
+            [
+                'name' => 'Osman Ustalar',
+                'password' => bcrypt('test'),
+                'is_active' => true
+            ]
+        );
+        User::updateOrCreate(
+            ['email' => 'kayacan.serap@gmail.com'],
+            [
+                'name' => 'Serap Kayacan',
+                'password' => bcrypt('1234'),
+                'is_active' => true
+            ]
+        );
     }
 }

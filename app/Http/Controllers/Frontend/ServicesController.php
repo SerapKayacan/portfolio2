@@ -13,10 +13,10 @@ class ServicesController extends Controller
     {
         $serviceCategory = ServiceCategory::where('is_active', true)->where('slug', $slug)->with('services')->firstOrFail();
 
-        SEOTools::setTitle($serviceCategory->title);
-        SEOTools::setDescription($serviceCategory->meta_description ?: 'Güvenka Organizasyon ' . $serviceCategory->title . ' hizmetleri hakkında detaylı bilgi alın.');
+        SEOTools::setTitle($serviceCategory->title . ' - Kayacan Yazılım');
+        SEOTools::setDescription($serviceCategory->meta_description ?: 'Kayacan Yazılım ' . $serviceCategory->title . ' hizmetleri hakkında detaylı bilgi alın.');
         SEOTools::opengraph()->addProperty('type', 'website');
-        SEOTools::metatags()->setKeywords($serviceCategory->tags->pluck('name')->toArray() ?: ['organizasyon hizmetleri', 'etkinlik yönetimi', 'güvenka organizasyon']);
+        SEOTools::metatags()->setKeywords($serviceCategory->tags->pluck('name')->toArray() ?: ['web geliştirme', 'yazılım çözümleri', 'kayacan yazılım']);
 
         return view($view, [
             'serviceCategory' => $serviceCategory,

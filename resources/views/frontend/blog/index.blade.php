@@ -1,8 +1,18 @@
 @extends('frontend.layouts.master')
 @section('content')
 <section class="padding-medium">
-    <div class="container-fluid padding-side">
-      <h2 class="display-3 fw-normal text-center mb-5">Blog ve Etkinlikler</h2>
+  <div class="container-fluid py-5 mb-5" style="background: linear-gradient(135deg, #111111 0%, #222222 100%);">
+    <div class="container py-4 text-center">
+      <div class="d-inline-flex align-items-center gap-2 bg-white bg-opacity-10 border border-white border-opacity-20 px-3 py-1 rounded-pill mb-3">
+        <span class="text-white text-uppercase fw-semibold" style="letter-spacing: 1.5px; font-size: 0.75rem;">Yazılar &bull; İpuçları</span>
+      </div>
+      <h1 class="display-4 fw-bold text-white mb-3">Web Geliştirme &amp; Teknoloji Yazıları</h1>
+      <p class="text-white-50 fs-5 mb-0 col-lg-8 mx-auto">
+        Modern web teknolojileri, dinamik yönetim panelleri ve SEO üzerine yazılar ve sektörel deneyimler.
+      </p>
+    </div>
+  </div>
+  <div class="container py-4">
       <div class="row mt-5">
         @foreach($blogs as $blog)
         <div class="col-md-6 col-lg-4 mb-4">

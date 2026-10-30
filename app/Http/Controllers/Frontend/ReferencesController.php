@@ -11,23 +11,14 @@ class ReferencesController extends Controller
 {
     public function index()
     {
-        SEOTools::setTitle('Referanslarımız');
-        SEOTools::setDescription('Güvenka Organizasyon olarak başarıyla gerçekleştirdiğimiz projeler, organizasyonlar ve bize güvenen markalar.');
+        SEOTools::setTitle('Referanslar & Projeler - Kayacan Yazılım');
+        SEOTools::setDescription('Kayacan Yazılım tarafından geliştirilen kurumsal web projeleri ve referanslar: Smart Grup, Sultan Evde Sağlık Hizmetleri, Anadolu Tadilat ve kurumsal çözümler.');
         SEOTools::opengraph()->addProperty('type', 'website');
-        SEOTools::metatags()->setKeywords(['güvenka organizasyon referanslar', 'çalıştığımız kurumlar', 'etkinlik referansları']);
+        SEOTools::metatags()->setKeywords(['kayacan yazılım referanslar', 'geliştirilen web siteleri', 'smart grup', 'sultan evde sağlık', 'anadolu tadilat']);
 
-        $securityReferences = Reference::where('is_active', true)
-            ->where('category', 'security')
-            ->orderBy('sort_order')
-            ->get();
-
-        $cleaningReferences = Reference::where('is_active', true)
-            ->where('category', 'cleaning')
-            ->orderBy('sort_order')
-            ->get();
-
+        $references = Reference::where('is_active', true)->orderBy('sort_order')->get();
         $partners = Partner::where('is_active', true)->orderBy('sort_order')->get();
 
-        return view('frontend.references', compact('securityReferences', 'cleaningReferences', 'partners'));
+        return view('frontend.references', compact('references', 'partners'));
     }
 }

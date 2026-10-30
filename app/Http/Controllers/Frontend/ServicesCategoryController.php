@@ -14,10 +14,10 @@ class ServicesCategoryController extends Controller
     {
         $serviceCategories = ServiceCategory::with('services')->where('is_active', true)->orderBy('sort_order', 'ASC')->get();
 
-        SEOTools::setTitle('Hizmetlerimiz');
-        SEOTools::setDescription('Güvenka Organizasyon etkinlik ve davet yönetimi kategorileri. Düğün, nişan, kına, açılış, doğum günü ve kurumsal organizasyon çözümleri.');
+        SEOTools::setTitle('Hizmetlerimiz - Kayacan Yazılım | Web & Yazılım Çözümleri');
+        SEOTools::setDescription('Kayacan Yazılım tarafından sunulan çözümler: Kurumsal Web Tasarımı, Özel Dinamik Yönetim Panelleri, SEO Optimizasyonu ve Sistem Entegrasyonları.');
         SEOTools::opengraph()->addProperty('type', 'website');
-        SEOTools::metatags()->setKeywords(['organizasyon hizmetleri', 'düğün organizasyonu', 'kına organizasyonu', 'nişan organizasyonu', 'açılış organizasyonu', 'güvenka organizasyon']);
+        SEOTools::metatags()->setKeywords(['web geliştirme hizmetleri', 'kurumsal web sitesi', 'yönetim paneli', 'seo optimizasyonu', 'kayacan yazılım']);
 
         return view('frontend.services-category', [
             'serviceCategories' => $serviceCategories,

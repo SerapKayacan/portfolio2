@@ -71,6 +71,28 @@
                                 </div>
 
                                 <div class="mb-10 row">
+                                    <div class="col-sm-6">
+                                        <label class="form-label">Canlı Web Sitesi URL</label>
+                                        <input class="form-control" name="url" value="{{ old('url') }}" placeholder="https://example.com">
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <label class="form-label">Rozet / Etiket</label>
+                                        <input class="form-control" name="badge" value="{{ old('badge', 'Canlı Proje') }}" placeholder="Örn: Canlı Proje, Canlı Proje + Panel">
+                                    </div>
+                                </div>
+
+                                <div class="mb-10 row">
+                                    <div class="col-sm-6">
+                                        <label class="form-label">Kullanılan Teknolojiler (Virgülle ayırın)</label>
+                                        <input class="form-control" name="technologies" value="{{ old('technologies') }}" placeholder="Örn: Laravel, Bootstrap 5, Dinamik Panel, SEO">
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <label class="form-label">Kart Gradyan / Renk Stili</label>
+                                        <input class="form-control" name="gradient" value="{{ old('gradient') }}" placeholder="Örn: linear-gradient(135deg, #0b1a3a 0%, #17346b 100%)">
+                                    </div>
+                                </div>
+
+                                <div class="mb-10 row">
                                     <div class="col-sm-3">
                                         <label class="form-label">Sıra</label>
                                         <input class="form-control" name="sort_order" type="number" value="{{ old('sort_order', 0) }}" min="0">

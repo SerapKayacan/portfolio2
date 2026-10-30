@@ -16,10 +16,10 @@ class ServicesDetailController extends Controller
             ->orderBy('sort_order', 'ASC')
             ->firstOrFail();
 
-        SEOTools::setTitle($service->title);
-        SEOTools::setDescription($service->meta_description ?: 'Güvenka Organizasyon ' . $service->title . ' hizmeti hakkında detaylı bilgi alın.');
+        SEOTools::setTitle($service->title . ' - Kayacan Yazılım');
+        SEOTools::setDescription($service->meta_description ?: 'Kayacan Yazılım ' . $service->title . ' hizmeti hakkında detaylı bilgi alın.');
         SEOTools::opengraph()->addProperty('type', 'article');
-        SEOTools::metatags()->setKeywords($service->tags->pluck('name')->toArray() ?: ['organizasyon', 'düğün', 'kına', 'güvenka organizasyon']);
+        SEOTools::metatags()->setKeywords($service->tags->pluck('name')->toArray() ?: ['web geliştirme', 'yazılım', 'kayacan yazılım']);
         if ($service->hasMedia('banner')) {
             SEOTools::addImages($service->getFirstMediaUrl('banner', 'large'));
         }

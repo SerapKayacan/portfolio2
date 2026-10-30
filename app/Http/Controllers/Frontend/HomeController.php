@@ -9,6 +9,8 @@ use App\Models\Blog;
 use Artesaos\SEOTools\Facades\SEOTools;
 use Illuminate\Http\Request;
 use App\Models\ServiceCategory;
+use App\Models\Reference;
+use App\Models\Testimonial;
 
 class HomeController extends Controller
 {
@@ -18,12 +20,17 @@ class HomeController extends Controller
         $carousels = Carousel::where('is_active', true)->orderBy('sort_order','ASC')->get();
         $tabPanels = TabPanel::where('is_active', true)->orderBy('sort_order','ASC')->get();
         $services = Service::where('is_active', true)->orderBy('sort_order','ASC')->get();
-        $blogs = Blog::where('is_active', true)->latest('published_at')->take(3)->get();
+        $blogs = Blog::where('is_active', true)->latest('published_at')->take(4)->get();
+        $references = Reference::where('is_active', true)->orderBy('sort_order', 'ASC')->get();
+        $testimonials = Testimonial::where('is_active', true)->orderBy('sort_order', 'ASC')->get();
 
-        SEOTools::setTitle('Ana Sayfa');
-        SEOTools::setDescription('Güvenka Organizasyon olarak İstanbul\'da düğün, kına, nişan, sünnet, doğum günü, baby shower ve kurumsal etkinlikleriniz için yaratıcı ve profesyonel çözümler sunuyoruz.');
+        SEOTools::setTitle('Kayacan Yazılım | Profesyonel Web & Yazılım Çözümleri');
+        SEOTools::setDescription('Kayacan Yazılım - Şirketler için modern kurumsal web siteleri, dinamik yönetim panelleri ve yüksek performanslı web çözümleri geliştiriyoruz.');
         SEOTools::opengraph()->addProperty('type', 'website');
-        SEOTools::metatags()->setKeywords(['güvenka organizasyon', 'düğün organizasyonu', 'kına organizasyonu', 'nişan organizasyonu', 'doğum günü organizasyonu', 'sünnet organizasyonu', 'kurumsal etkinlik', 'istanbul organizasyon']);
+        SEOTools::metatags()->setKeywords([
+            'kayacan yazılım', 'web geliştirici', 'kurumsal web sitesi', 'yazılım ajansı',
+            'dinamik yönetim paneli', 'smart grup', 'sultan evde sağlık', 'anadolu tadilat'
+        ]);
 
         return view('frontend.home', [
             'serviceCategories' => $serviceCategories,
@@ -31,7 +38,8 @@ class HomeController extends Controller
             'tabPanels'         => $tabPanels,
             'services'          => $services,
             'blogs'             => $blogs,
+            'references'        => $references,
+            'testimonials'      => $testimonials,
         ]);
     }
-
 }
